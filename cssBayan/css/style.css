@@ -1,0 +1,62 @@
+body {
+  font-family: 'Tilt Warp', sans-serif;
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  color: blue;
+  font-size: 20px;
+}
+
+.accordions:hover {
+  color: black;
+}
+
+.accordions:hover .fa-plus {
+  visibility: visible;
+}
+
+.accordion {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-top: 1px solid grey;
+  outline: none;
+  transition: 0.4s;
+}
+
+.fa-plus {
+  visibility: hidden;
+  transition: transform 0.2s;
+  color: black;
+}
+
+.accordion:hover + .panel {
+  max-height: 500px;
+}
+
+.accordion:hover > .fa-plus {
+  transform: rotate(45deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.image {
+  width: 400px;
+  height: 400px;
+}
