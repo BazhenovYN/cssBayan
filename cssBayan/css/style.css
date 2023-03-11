@@ -1,5 +1,7 @@
 body {
   font-family: 'Tilt Warp', sans-serif;
+  width: 50%;
+  margin: auto;
 }
 
 .accordions {
@@ -8,8 +10,6 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 50%;
-  margin: auto;
   color: blue;
   font-size: 20px;
 }
@@ -24,7 +24,7 @@ body {
 
 .accordion {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: white;
   cursor: pointer;
   padding: 18px;
@@ -36,21 +36,27 @@ body {
   transition: 0.4s;
 }
 
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .fa-plus {
   visibility: hidden;
   transition: transform 0.2s;
   color: black;
 }
 
-.accordion:hover + .panel {
+.accordion:hover > .panel {
   max-height: 500px;
 }
 
-.accordion:hover > .fa-plus {
+.accordion:hover .fa-plus {
   transform: rotate(45deg);
 }
 
 .panel {
+  align-self: center;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
